@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+   padding: 0;
+   background-color: blanchedalmond;
+
+}
+nav{
+background: transparent;
+}
+header{
+border: 5px rgb(78,7,20) solid;
+padding: 20px;
+align-items: end;
+font-size: 25px;
+text-align: end;
+color: chocolate;
+text-decoration: none;
+background-color: beige;
+
+}
+a:visited{
+background: transparent;
+text-decoration: none;
+color: chocolate;
+}
+a:link{
+background: transparent;
+text-decoration: none;
+}
+h1{
+    padding: 20px 0px 50px 0px;
+    text-align: center;
+    font-size: 5rem;
+}
+table{
+    padding: 20px auto;
+    height: auto;
+    border: 5px rgb(78, 7, 20) solid; 
+    align-items: center;
+    width: 100%;
+    
+ }
+thead{
+    font-size: 1.2rem;
+    text-decoration: dashed;
+    align-items: center;
+}
+tbody{
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+}
+
+nav a:hover{
+    background-color: crimson;
+    color: white;   
+}
+footer p{
+    color: white;
+}
+footer{
+    font-size: 3rem;
+    
+}
+
+@media (max-width: 700px){
+    
+    table{
+        font-size: 10px;
+        display: block;
+    }
+    nav{
+        display: block;
+    }
+}

@@ -9,23 +9,24 @@ if($varsesion== null|| $varsesion== ''){
 }
 
 ?>
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Buscar Producto</title>
     <link rel="stylesheet" href="css/Buscar.css">
 </head>
 <body>
-    <header>
+<header>
         <nav id="Navegacion" >
             <a href="index.php">Administrador</a>
             <a href="EditarProductos.php"> Editar Productos</a>
             <a href="EliminarProducto.php">Eliminar Productos</a>
             <a href="BuscarProducto.php">Buscar Productos</a>
+            <a href="Usuarios.php"> Usuarios</a>
             <a href="Cerrar_sesion.php">Cerrar Sesion</a>
+            
         </nav>
     </header>
         <?php

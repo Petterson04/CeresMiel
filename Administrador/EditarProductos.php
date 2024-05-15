@@ -18,14 +18,16 @@ if($varsesion== null|| $varsesion== ''){
     <link rel="stylesheet" href="./css/EditarProducto.css">
 </head>
 <header>
-<nav id="Navegacion" >
+        <nav id="Navegacion" >
             <a href="index.php">Administrador</a>
             <a href="EditarProductos.php"> Editar Productos</a>
             <a href="EliminarProducto.php">Eliminar Productos</a>
             <a href="BuscarProducto.php">Buscar Productos</a>
+            <a href="Usuarios.php"> Usuarios</a>
             <a href="Cerrar_sesion.php">Cerrar Sesion</a>
+            
         </nav>
-</header>
+    </header>
 <body>
     
     <fieldset>

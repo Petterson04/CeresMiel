@@ -26,7 +26,9 @@ if($varsesion== null|| $varsesion== ''){
             <a href="EditarProductos.php"> Editar Productos</a>
             <a href="EliminarProducto.php">Eliminar Productos</a>
             <a href="BuscarProducto.php">Buscar Productos</a>
+            <a href="Usuarios.php"> Usuarios</a>
             <a href="Cerrar_sesion.php">Cerrar Sesion</a>
+            
         </nav>
     </header>
     <h1>Registrar productos</h1>
