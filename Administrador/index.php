@@ -19,12 +19,10 @@ if($varsesion== null|| $varsesion== ''){
     <title>Administrador</title>
     <link rel="stylesheet" href=".//css/Agregarproducto.css">
 </head>
-<body>
-<header>
+<body><header>
         <nav id="Navegacion" >
             <a href="index.php">Administrador</a>
             <a href="EditarProductos.php"> Editar Productos</a>
-            <a href="EliminarProducto.php">Eliminar Productos</a>
             <a href="BuscarProducto.php">Buscar Productos</a>
             <a href="Usuarios.php"> Usuarios</a>
             <a href="Cerrar_sesion.php">Cerrar Sesion</a>
@@ -84,10 +82,12 @@ if($varsesion== null|| $varsesion== ''){
                         <a href="EditarProductos.php"> 
                            <button class="editar" >Editar</button>
                         </a>
+                        <form action="Eliminar.php" method="post" class="Eliminar_Producto">
+                            <input type="hidden" name="Id_Producto" value="<?php echo $row['Id_Producto']?>">
+                            <input type="hidden" name="Id_Boton" value="boton_<?php echo $row['Id_Producto']?>">
+                            <button type="submit" class="buttonDelete">Eliminar</button>
+                         </form>
 
-                        <a href="EliminarProducto.php">
-                            <button class="eliminar" value=<?php $Id_Producto ?>>Eliminar</button>
-                        </a>
                     </td>
                     </tr>
                     <?php }?>

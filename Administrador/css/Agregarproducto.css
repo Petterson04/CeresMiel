@@ -57,7 +57,7 @@ form{
 }
 
 section{
-    margin: 20px auto 30px;
+    margin: 20px auto 30px; 
     height: 50%;
     width: 50%;
     border:12px burlywood solid;
@@ -101,11 +101,14 @@ tbody{
     width: 100%;
     margin: 0px;
 }
-.eliminar{
-    margin: 0px;
+.Eliminar_Producto{
+    padding: 0%;
+    
+}
+.buttonDelete{
+    width: 100%;
     background-color: red;
     font-size: 1rem;
-    width: 100%;
 }
 
 nav a:hover{

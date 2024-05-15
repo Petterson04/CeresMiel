@@ -1,10 +1,10 @@
 <?php
     include("base.php");
-    $Id_Producto=$_GET['Id'];
-    $Precio=$_GET['Precio'];
-    $NombreProducto=$get['NombreProducto'];
-
-    $sql=mysqli_query($conect,"DELETE FROM productos WHERE NombreProducto='$NombreProducto' OR Id_producto='$Id_Producto';");
+    if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['Id_Producto'])&& isset($_POST['Id_Boton'])){
+      $Id_Producto=$_POST['Id_Producto'];
+  }
+    
+    $sql=mysqli_query($conect,"DELETE FROM productos WHERE Id_producto='$Id_Producto';");
 
     if($sql){
         header ("location: index.php");
