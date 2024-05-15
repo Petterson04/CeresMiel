@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar secion</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<header>
+    <nav id="Navegacion">
+        <a href="index.php">Pagina Principal</a>
+        <a href="login.html"> Login</a>
+        <a href="Registro.html">Registro</a>
+        <a href="productos.php">productos</a>
+        
+    </nav>
+</header>
+<body>
+    
+    <fieldset>
+    <form action="Validacion.php" method="post">
+        <div>
+        <legend>Ingresa tus datos de inicio de seción</legend>
+        <div>
+          
+            <input type="email" placeholder="Correo" name="correo">
+        </div>
+        <div>
+      
+            <input type="password"placeholder="Contraseña" name="contraseña">
+        </div>
+        <div>
+            <input class="Boton" type="submit" value="iniciar">
+        </div>
+        <p> No tienes cuenta 
+            <a href="./Registro.html">Registrate ahora</a>
+        </p>
+    </form>
+</div>
+    </fieldset>
+    
+</body>
+</html>

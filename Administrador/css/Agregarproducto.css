@@ -1,0 +1,127 @@
+*{
+         margin: 0;
+        padding: 0;
+        background-color: blanchedalmond;
+
+}
+nav{
+    background: transparent;
+}
+header{
+    border: 5px rgb(78,7,20) solid;
+    padding: 20px;
+   align-items: end;
+   font-size: 25px;
+   text-align: end;
+   color: chocolate;
+   text-decoration: none;
+   background-color: beige;
+   
+}
+a:visited{
+    background: transparent;
+    text-decoration: none;
+    color: chocolate;
+}
+a:link{
+    background: transparent;
+    text-decoration: none;
+}
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+
+form{
+    justify-content: center;
+    box-sizing: border-box;
+    color: black;
+    padding: 5rem;
+    text-align: center;
+    font-size: 25px;  
+    align-items: center;
+    text-decoration: double;
+    background-color: beige;
+}
+.Enviar{
+    background-color: beige;
+}
+.Txt{
+    background-color: beige;
+}
+.FORM{
+    background-color: beige;
+}
+
+section{
+    margin: 20px auto 30px;
+    height: 50%;
+    width: 50%;
+    border:12px burlywood solid;
+    display: flex; 
+    justify-content: center ;
+    align-items: center;
+    background-color: beige;
+}
+
+input{
+    color: black;
+    text-decoration: solid;
+    background: transparent;
+    outline: none;
+     width: 100%;
+     border-radius: 50px;
+     align-items: center;
+     position: relative;
+     font-size: 15px;
+     color: black(247, 248, 248);
+     text-align: center;
+     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+table{
+    border: 5px rgb(78, 7, 20) solid; 
+    align-items: center;
+    width: 100%;
+    
+ }
+thead{
+    font-size: 1.2rem;
+    text-decoration: dashed;
+    align-items: center;
+}
+tbody{
+    font-size: 1rem;
+}
+.editar{
+    background-color: greenyellow;
+    font-size: 1rem;
+    width: 100%;
+    margin: 0px;
+}
+.eliminar{
+    margin: 0px;
+    background-color: red;
+    font-size: 1rem;
+    width: 100%;
+}
+
+nav a:hover{
+    background-color: crimson;
+    color: white;   
+}
+@media (max-width: 700px){
+    section{
+        width: 100%;
+        height: 100%;
+    }    
+    table{
+        font-size: 10px;
+        display: block;
+    }
+    nav{
+        display: block;
+    }
+}

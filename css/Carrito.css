@@ -1,0 +1,64 @@
+body {
+    background-color:blanchedalmond;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+header{
+
+    border: 5px rgb(78,7,20) solid;
+    background-color: rgb(236, 236, 139);
+    padding: 20px;
+}
+h2{
+    font-size: 3.5rem;
+    text-align: center;
+}
+table{
+    width: 100%;
+    border: 2.5px solid salmon;
+}
+.botonpagar{
+    text-align: end;
+    color: red;
+}
+a .botonpagar{
+    color: red;
+}
+tr{
+    text-align: center;
+    align-items: center;
+}
+th{
+    font-size: 2rem;
+}
+#Navegacion{
+    font-size: 23px;
+    color: crimson;
+    text-align: end;
+    align-items: end;
+}
+a:visited{
+
+    color:  chocolate;
+    font-size: 25px;
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    background-color: crimson;
+    color: white;
+}
+.modificar{
+    color: red;
+    font-size: 25px;
+}
+.botonpagar{
+
+    font-size: 30px;
+}
