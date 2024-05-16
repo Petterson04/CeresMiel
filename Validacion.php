@@ -2,11 +2,14 @@
     include("base.php");
     $correo=$_POST['correo'];
     $contraseña=$_POST['contraseña'];
+    $name=$_POST['nombre'];
+    $tel=$_POST['telefono'];
     session_start();
     $_SESSION['correo']=$correo;
-    $_SESSION['contraseña']=$contraseña;
+    $_SESSION['nombre']=$name;
+    $_SESSION['telefono']=$tel;
     
-    $cosulta="SELECT*FROM usuario WHERE correo='$correo' and contraseña='$contraseña'";
+    $cosulta="SELECT*FROM usuario WHERE nombre='$name' and correo='$correo' and contraseña='$contraseña'";
     $resultado=mysqli_query($conect,$cosulta);
 
     $filas=mysqli_fetch_array($resultado);

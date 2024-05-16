@@ -1,9 +1,9 @@
 <?php 
 session_start();
 
-if(isset( $_SESSION['correo'])||isset( $_Filas['nombre']))
+if(isset( $_SESSION['correo'])||isset( $_SESSION['nombre'])||isset( $_SESSION['telefono']))
 {
-    $name= $_Filas['nombre'];
+    
     $email = $_SESSION['correo'];
 
     require('fpdf/fpdf186/fpdf.php');
@@ -40,14 +40,20 @@ if(isset( $_SESSION['correo'])||isset( $_Filas['nombre']))
     $pdf->Cell(40,10,'Calle San carlos #1044');
     $pdf->SetXY(25,43);
     $pdf->Cell(40,10,'45236 Edo.Jalisco');
+    $pdf->SetXY(25,47);
+    $pdf->Cell(40,10,'Correo de contacto: mielesceres@gmail.com ');
+
     //Fin datos de la tienda
     
     //Datos del comprador
-    $pdf->SetXY(25,50);
+    $pdf->SetXY(25,52);
     $pdf->Cell(60,10,'PARA '); 
-    $pdf->SetXY(25,53);
+    $pdf->SetXY(25,55);
     $pdf->Cell(60,10,'Email: '.$_SESSION['correo'].'');   
-    $pdf->SetXY(25,58);
+    $pdf->SetXY(25,59);
+    $pdf->cell(60,10,'Nombre:'.$_SESSION['nombre'].'');
+    $pdf->SetXY(25,62);
+    $pdf->Cell(60,10,'Telefono:'.$_SESSION['telefono'].'');
     
 
 
@@ -97,7 +103,11 @@ if(isset( $_SESSION['correo'])||isset( $_Filas['nombre']))
     }
 
     //footer
+    $pdf->SetXY($x+10,195);
+    $pdf->SetFontSize(20);
+    $pdf->Cell(0,5,'ENDULZA-TE ',0,0,'C');
     $pdf->SetXY($x+10,200);
+    $pdf->SetFontSize(9);
     $pdf->Cell(0,5,'CONDICIONES & FORMA DE PAGO',0,0,'C');
     $pdf->SetXY($x+10,205);
     $pdf->Cell(0,5,utf8_decode('El pago se realizará en un lapso de maximo 7 días'),0,0,'C');
