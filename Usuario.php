@@ -13,5 +13,6 @@ if (isset($_SESSION['correo'])) {
 </head>
 <body>
     <h1>Bienvenido <?php echo $correo ?></h1>
+    
 </body>
 </html>

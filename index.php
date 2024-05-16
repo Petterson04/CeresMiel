@@ -17,7 +17,10 @@
                 session_start();
                 if (isset($_SESSION['correo'])) {
                     $correo=$_SESSION['correo'];
+                
                     echo $correo;
+                    
+                
                 } else {
                     echo '';
                 }

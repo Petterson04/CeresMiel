@@ -1,9 +1,9 @@
 <?php 
 session_start();
 
-if(isset( $_SESSION['correo']))
+if(isset( $_SESSION['correo'])||isset( $_Filas['nombre']))
 {
-
+    $name= $_Filas['nombre'];
     $email = $_SESSION['correo'];
 
     require('fpdf/fpdf186/fpdf.php');
@@ -15,7 +15,7 @@ if(isset( $_SESSION['correo']))
 
     $pdf->AddPage();
     $pdf->SetXY($x, $y);
-   // $pdf->Image('./imagenes/Logo.png',150,20,33,0,'PNG','#');
+    $pdf->Image('Logo.jpg',150,20,33,0,'JPG','https://www.instagram.com/ceres.mieles?igsh=cDdhNzVpa2IxbHo5&utm_source=qr');
     $pdf->SetFont('Helvetica','B',20);
     $pdf->SetFillColor(255,196,102);
     $pdf->SetDrawColor(255,255,255);
@@ -24,7 +24,7 @@ if(isset( $_SESSION['correo']))
     
     $pdf->SetXY(25,$y+5);
     $pdf->SetFontSize(35);
-    $pdf->Cell(150,10,'RECIBO',0,0,'L',0);
+    $pdf->Cell(150,10,'RECIBO DE COMPRA ',0,0,'L',0);
     $pdf->SetXY(25,$y+25);
     $pdf->SetFontSize(9);
     $pdf->Cell(60,0,'DE');
@@ -35,7 +35,7 @@ if(isset( $_SESSION['correo']))
     $pdf->SetXY(25,38);
     $pdf->Cell(60,5,'Ceres');
     $caducidad = date("d-m-Y", strtotime($fecha.'+ 7 days'));
-    $pdf->Cell(0,5,'FECHA DE CADUCIDAD del pedido: '.$caducidad.'');
+    $pdf->Cell(0,5,'Pagar antes del: '.$caducidad.'');
     $pdf->SetXY(25,40);
     $pdf->Cell(40,10,'Calle San carlos #1044');
     $pdf->SetXY(25,43);
@@ -48,6 +48,7 @@ if(isset( $_SESSION['correo']))
     $pdf->SetXY(25,53);
     $pdf->Cell(60,10,'Email: '.$_SESSION['correo'].'');   
     $pdf->SetXY(25,58);
+    
 
 
     $y = 40;
@@ -151,5 +152,5 @@ if (mail($to,$subject, $body, $headers)) {
 
 
 }
-    
+  
 ?>

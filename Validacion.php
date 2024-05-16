@@ -4,12 +4,13 @@
     $contraseña=$_POST['contraseña'];
     session_start();
     $_SESSION['correo']=$correo;
+    $_SESSION['contraseña']=$contraseña;
     
-
     $cosulta="SELECT*FROM usuario WHERE correo='$correo' and contraseña='$contraseña'";
     $resultado=mysqli_query($conect,$cosulta);
 
     $filas=mysqli_fetch_array($resultado);
+    
     if($filas['correo']=='Admin@gmail.com'){
         header ("location:Administrador/index.php");}
         else{
