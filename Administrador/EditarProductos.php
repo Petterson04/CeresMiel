@@ -31,7 +31,7 @@ if($varsesion== null|| $varsesion== ''){
     
     <fieldset>
     
-    <form action="Editar.php" method="post">    
+    <form action="./Funciones/Editar.php" method="post">    
         <div>
             <input type="number" name="Id" placeholder="Id producto a modificar">
         </div>       

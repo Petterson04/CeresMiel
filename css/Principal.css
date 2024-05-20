@@ -102,4 +102,5 @@ footer{
     font-size: 2rem;
     text-align: left;
     align-items: normal;
+    flex-direction: column;
 }

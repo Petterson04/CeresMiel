@@ -9,7 +9,7 @@
     $_SESSION['nombre']=$name;
     $_SESSION['telefono']=$tel;
     
-    $cosulta="SELECT*FROM usuario WHERE nombre='$name' and correo='$correo' and contraseña='$contraseña'";
+    $cosulta="SELECT*FROM usuario WHERE correo='$correo' and contraseña='$contraseña'";
     $resultado=mysqli_query($conect,$cosulta);
 
     $filas=mysqli_fetch_array($resultado);

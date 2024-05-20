@@ -141,8 +141,9 @@ a:hover{
     background-color: crimson;
     color: white;
 }
+/** Pie de pagina*/
 footer{
-    font-size: 1.2rem;
-    color: white;
+    font-size: 2rem;
+    color: whitesmoke;
     font-size: 2rem;
 }
