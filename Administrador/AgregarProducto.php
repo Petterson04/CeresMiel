@@ -12,7 +12,7 @@
     
     if($sql){
         echo"Producto registrado";
-        header ("location:./index.php");
+        header ("location:index.php");
         exit;
 
     }else{

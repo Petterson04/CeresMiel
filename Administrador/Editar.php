@@ -8,10 +8,10 @@
 
     $sql= mysqli_query($conect,"UPDATE productos SET NombreProducto='$NombreProducto', Precio='$Precio', Onzas='$Onzas', Imagen='$Imagen' WHERE Id_Producto='$Id_Producto';");
     if($sql){
-        header("location: index.php");
+        header("location:index.php");
         exit();
     }else{
-        header("location: index.html");
+        header("location:index.php");
     }
 
 ?>

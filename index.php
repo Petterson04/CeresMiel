@@ -8,6 +8,7 @@
     <title>Principal</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link href="css/Principal.css"  rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -75,6 +76,7 @@
     </div>-->
 <footer>
     <p>Encuentranos en nuestras redes sociales</p>
+    <a href="Acercadenosotros.html">Acerda de nosotros</a>
     <a href="https://www.instagram.com/ceres.mieles?igsh=cDdhNzVpa2IxbHo5&utm_source=qr">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

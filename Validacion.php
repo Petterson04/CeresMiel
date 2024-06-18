@@ -20,6 +20,7 @@
         header("location:index.php");
     }
     if($filas== null){
+       
         header ("location:login.html");
         session_destroy();
     }

@@ -61,7 +61,7 @@ a:link{
     color: aqua;
     text-decoration: none;
 }
-a:hover{
+header a:hover{
     background-color: crimson;
     color: white;
 }
@@ -103,4 +103,9 @@ footer{
     text-align: left;
     align-items: normal;
     flex-direction: column;
+}
+footer a:hover{
+    background-color: transparent;
+    columns: black;
+
 }
