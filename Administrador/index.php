@@ -26,13 +26,13 @@ if($varsesion== null|| $varsesion== ''){
             <a href="BuscarProducto.php">Buscar Productos</a>
             <a href="Usuarios.php"> Usuarios</a>
             <a href="Cerrar_sesion.php">Cerrar Sesion</a>
-            
+            <a href="Bitacora.php">Bitacora</a>
         </nav>
     </header>
     <h1>Registrar productos</h1>
     <section>
             <fieldset>
-                <form class="Formulario" method="post" action="./Funciones/AgregarProducto.php">
+                <form class="Formulario" method="post" action="AgregarProducto.php">
                     <div class="FORM">
                         <div class="Txt">
                             <input name="NombreProducto" type="text" placeholder="Nombredelproducto">
@@ -82,7 +82,7 @@ if($varsesion== null|| $varsesion== ''){
                         <a href="EditarProductos.php"> 
                            <button class="editar" >Editar</button>
                         </a>
-                        <form action="./Funciones/Eliminar.php" method="post" class="Eliminar_Producto">
+                        <form action="Eliminar.php" method="post" class="Eliminar_Producto">
                             <input type="hidden" name="Id_Producto" value="<?php echo $row['Id_Producto']?>">
                             <input type="hidden" name="Id_Boton" value="boton_<?php echo $row['Id_Producto']?>">
                             <button type="submit" class="buttonDelete">Eliminar</button>

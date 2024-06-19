@@ -31,9 +31,9 @@
 
             
             <a href="index.php">Pagina Principal</a>
-            <a href="productos.php">productos</a>
             <?php if(isset($_SESSION['correo'])): ?>
             <a href="./Administrador/Cerrar_sesion.php">Cerrrar sesion</a>
+            <a href="productos.php">productos</a>
             <?php else:?>
             <a href="login.html"> Login</a>
             <a href="Registro.html">Registro</a>

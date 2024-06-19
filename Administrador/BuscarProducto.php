@@ -75,7 +75,7 @@ if($varsesion== null|| $varsesion== ''){
                <button class="editar" >Editar</button>
             </a>
 
-            <a href="EliminarProducto.php">
+            <a href="Eliminar.php">
                 <button class="eliminar" >Eliminar</button>
             </a>
         </td>

@@ -6,6 +6,7 @@
     <title>Productos</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link href="./css/Productos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Carrito.css">
 </head>
 <body>
     <header>
@@ -62,15 +63,68 @@
                            <p class="producto__nombre"> <?php echo $row['Onzas'] ?>(oz)</p>
                             <p class="producto__precio">$<?php echo $row['Precio'] ?></p>
                         </div>
-                        <form action="agregar_carrito.php" method="post" class="agregar-carro">
-                    <input type="hidden" name="Id_Producto" value="<?php echo $row['Id_Producto']?>">
-                    <input type="hidden" name="Id_Boton" value="boton_<?php echo $row['Id_Producto']?>">
-                    <button type="submit" class="agregar-carrito">Agregar al carrito</button>
-                </form>
+
+                        <button class="agregar-carrito" data-product-id="<?php echo $row['Id_Producto']?>" >Agregar al carrito</button>
+                
                 </div>
             <?php 
             } //cerramos las llaves del while ?>
         </div>
+        <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Onzas</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Modificaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            include('base.php');
+                $total = 0; // Inicializamos el total en 0
+                if (isset($_SESSION['carrito'])) {
+                    foreach ($_SESSION['carrito'] as $Id_Boton => $producto) {
+                        //Estos son los datos que va a imprimir en la tabla el $producto[] debe de ser igual a como lo pusiste en el de agregar carrito
+                        echo "<tr>";
+                        echo "<td>Jarabe de miel sabor{$producto['NombreProducto']}</td>";
+                        echo "<td>{$producto['Onzas']}</td>";
+                        echo "<td>$ {$producto['Precio']}</td>";
+                        echo "<td>{$producto['cantidad']}</td>";
+                        echo "<td>$ {$producto['subtotal']}</td>";
+                        echo "<td>";
+                        ?>
+                        <section class="modificar">
+                            <?php 
+                        echo "<a href='Modificarcarrito.php?action=add&id={$Id_Boton}'>+<i class='fa-solid fa-plus'></i></a> ";
+                        echo "<a href='Modificarcarrito.php?action=remove&id={$Id_Boton}' >-<i class='fa-solid fa-minus'></i></a> ";
+                        echo "<a href='Modificarcarrito.php?action=delete&id={$Id_Boton}' >borrar<i class='fa-solid fa-trash'></i></a>";
+                        ?>
+                        </section>
+                        <?php
+                        echo "</td>";
+                        echo "</tr>";
+                        $total += $producto['subtotal']; // Sumamos al total el subtotal de cada producto
+                    }
+                } else {
+                    echo "<tr><td colspan='5'>El carrito está vacío</td></tr>";
+                }
+            ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>Total</strong></td>
+                <td><strong>$ <?php echo $total; ?></strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="botonpagar">
+    <a href="PDF.php" class="btn-pdf">Pagar<i class="fa-solid fa-file-pdf"></i></a>
+</div>
     </main>
     <footer>
     <p>Encuentranos en nuestras redes sociales</p>
@@ -90,6 +144,33 @@
 </svg>
     </a>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+
+        const AgregarProductos=document.querySelectorAll('.agregar-carrito');
+
+        AgregarProductos.forEach(btn => {
+            btn.addEventListener('click',function(event){
+                event.preventDefault();
+                const id= btn.getAttribute('data-product-id');
+                agrega(id);
+            });
+        });
+    function agrega(id){
+        const xr= new XMLHttpRequest();
+        xr.open('POST','Agregar_carrito.php');
+        xr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        xr.onload=function(){
+            if(xr.status===200){
+            location.reload();
+        }else{
+            console.error('Error al agregar al carrito',xr.status);
+        }
+    }
+    xr.send(`Id_Producto =${id}`)
+}
+    });
+</script>
 </body>
 </html>
 
