@@ -56,7 +56,7 @@
                 //cerramos para mostrar los productos ?>
             
                 <div class="producto">
-                    <p class="id_producto"><?php echo $row['Id_Producto']?></p>
+                    
                     <img class="producto__imagen" src="<?php echo $row['Imagen'] ?>" >
                         <div class="producto__informacion">
                             <p class="producto__nombre">Jarabe de agave sabor <?php echo $row['NombreProducto'] ?></p>
@@ -73,6 +73,7 @@
         <table>
         <thead>
             <tr>
+                
                 <th>Producto</th>
                 <th>Onzas</th>
                 <th>Precio</th>
@@ -86,7 +87,7 @@
             include('base.php');
                 $total = 0; // Inicializamos el total en 0
                 if (isset($_SESSION['carrito'])) {
-                    foreach ($_SESSION['carrito'] as $Id_Boton => $producto) {
+                    foreach ($_SESSION['carrito'] as $Id_Producto => $producto) {
                         //Estos son los datos que va a imprimir en la tabla el $producto[] debe de ser igual a como lo pusiste en el de agregar carrito
                         echo "<tr>";
                         echo "<td>Jarabe de miel sabor{$producto['NombreProducto']}</td>";
@@ -98,9 +99,9 @@
                         ?>
                         <section class="modificar">
                             <?php 
-                        echo "<a href='Modificarcarrito.php?action=add&id={$Id_Boton}'>+<i class='fa-solid fa-plus'></i></a> ";
-                        echo "<a href='Modificarcarrito.php?action=remove&id={$Id_Boton}' >-<i class='fa-solid fa-minus'></i></a> ";
-                        echo "<a href='Modificarcarrito.php?action=delete&id={$Id_Boton}' >borrar<i class='fa-solid fa-trash'></i></a>";
+                        echo "<a href='Modificarcarrito.php?action=add&id={$Id_Producto}'>+<i class='fa-solid fa-plus'></i></a> ";
+                        echo "<a href='Modificarcarrito.php?action=remove&id={$Id_Producto}' >-<i class='fa-solid fa-minus'></i></a> ";
+                        echo "<a href='Modificarcarrito.php?action=delete&id={$Id_Producto}' >borrar<i class='fa-solid fa-trash'></i></a>";
                         ?>
                         </section>
                         <?php
@@ -145,32 +146,35 @@
     </a>
 </footer>
 <script>
-    document.addEventListener('DOMContentLoaded',function(){
+    document.addEventListener('DOMContentLoaded', function() {
+        const agregarCarritoBtns = document.querySelectorAll('.agregar-carrito');
 
-        const AgregarProductos=document.querySelectorAll('.agregar-carrito');
-
-        AgregarProductos.forEach(btn => {
-            btn.addEventListener('click',function(event){
+        agregarCarritoBtns.forEach(btn => {
+            btn.addEventListener('click', function(event) {
                 event.preventDefault();
-                const id= btn.getAttribute('data-product-id');
-                agrega(id);
+                const productId = btn.getAttribute('data-product-id');
+                agregarAlCarrito(productId);
             });
         });
-    function agrega(id){
-        const xr= new XMLHttpRequest();
-        xr.open('POST','Agregar_carrito.php');
-        xr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-        xr.onload=function(){
-            if(xr.status===200){
-            location.reload();
-        }else{
-            console.error('Error al agregar al carrito',xr.status);
+
+        function agregarAlCarrito(productId) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'agregar_carrito.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    location.reload();
+                    console.log(productId)
+                } else {
+                    console.error('Error al agregar al carrito:', xhr.status);
+                }
+            };
+            xhr.send(`Id_Producto=${productId}`);
+            
         }
-    }
-    xr.send(`Id_Producto =${id}`)
-}
     });
 </script>
+
 </body>
 </html>
 

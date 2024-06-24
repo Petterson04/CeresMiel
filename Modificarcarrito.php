@@ -38,6 +38,6 @@
         }
     }
 
-    header("Location: carrito.php"); 
+    header("Location: productos.php"); 
     exit;
 ?>

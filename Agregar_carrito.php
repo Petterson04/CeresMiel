@@ -9,9 +9,9 @@ if($varsesion== null|| $varsesion== ''){
 }
 ?>
 <?php 
-if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['Id_Producto'])&& isset($_POST['Id_Boton'])){
+if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST['Id_Producto'])){
     $Id_Producto=$_POST['Id_Producto'];
-    $Id_Boton=$_POST['Id_Boton'];
+    $Id_Boton='boton_' .$Id_Producto;
 }
 //realizamos la consulta con la base de datos para obtener la informacion del producto
 //Modificas el archivo de include y la variable del query de sql
@@ -25,7 +25,9 @@ if(!isset($_SESSION['carrito'])) {
 //verificamos si el producto ya se encuentra en el carro
 if(isset($_SESSION['carrito'][$Id_Boton])) {
     $_SESSION['carrito'][$Id_Boton]['cantidad']++;
-    $_SESSION['carrito'][$Id_Boton]['subtotal']==$_SESSION['carrito'][$Id_Boton]['Precio']**$_SESSION['carrito']['Id_Boton']['cantidad'];
+    $_SESSION['carrito'][$Id_Boton]['subtotal']= $_SESSION['carrito'][$Id_Boton]['Precio']*$_SESSION['carrito'][$Id_Boton]['cantidad'];
+    // $_SESSION['carrito'][$Id_Boton]['subtotal']==$_SESSION['carrito'][$Id_Boton]['Precio']**$_SESSION['carrito']['Id_Boton']['cantidad'];
+    
 }else{
     
     $producto_carrito=array(
@@ -35,7 +37,7 @@ if(isset($_SESSION['carrito'][$Id_Boton])) {
         'Onzas'=> $producto['Onzas'],
         'Precio'=> $producto['Precio'],
         'cantidad'=>1,
-        'subtotal'=> $producto['Precio'],
+        'subtotal'=> $producto['Precio'] , 
     );
     $_SESSION['carrito'][$Id_Boton]=$producto_carrito;
 }
